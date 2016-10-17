@@ -21,6 +21,9 @@ var AppComponent = (function () {
     AppComponent.prototype.selectUser = function (user) {
         this.activeUser = user;
     };
+    AppComponent.prototype.onUserCreated = function (event) {
+        this.users.push(event.user);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
