@@ -16,7 +16,8 @@ import { Component } from '@angular/core';
 					<div class="col-sm-4">
 						<ul class="list-group users-list">
 							<li class="list-group-item" 
-								*ngFor="let user of users">
+								*ngFor="let user of users"
+								(click)="selectUser(user)">
 								{{ user.name }} ({{ user.username }})
 							</li>
 						</ul>
@@ -49,5 +50,11 @@ export class AppComponent {
 		{ id: 2, name: "Jose Manuel", username: "pikiknox" },
 		{ id: 3, name: "Armando Collazo", username: "kakarot87007" },
 		{ id: 4, name: "Fanny Peralta", username: "higheskape" }
-	]
+	];
+	activeUser;
+
+	selectUser(user) {
+		this.activeUser = user;
+		console.log(this.activeUser);
+	}
 }
